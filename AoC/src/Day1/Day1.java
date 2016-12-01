@@ -22,13 +22,14 @@ public class Day1 {
             facing = 'E';
             Point newPoint =new Point(actual.getX()+num,actual.getY());
             Line line = new Line(actual,newPoint);
-            checkIfCuts(line,lines);
+            checkIfIntersects(line,lines);
             lines.add(line);
             actual = newPoint;
           }else{
             facing = 'W';
             Point newPoint =new Point(actual.getX()-num,actual.getY());
             Line line = new Line(actual,newPoint);
+            checkIfIntersects(line,lines);
             lines.add(line);
             actual = newPoint;
           }
@@ -38,12 +39,14 @@ public class Day1 {
             facing = 'S';
             Point newPoint =new Point(actual.getX(),actual.getY()-num);
             Line line = new Line(actual,newPoint);
+            checkIfIntersects(line,lines);
             lines.add(line);
             actual = newPoint;
           }else{
             facing = 'N';
             Point newPoint =new Point(actual.getX(),actual.getY()+num);
             Line line = new Line(actual,newPoint);
+            checkIfIntersects(line,lines);
             lines.add(line);
             actual = newPoint;
           }
@@ -53,12 +56,14 @@ public class Day1 {
             facing = 'N';
             Point newPoint =new Point(actual.getX(),actual.getY()+num);
             Line line = new Line(actual,newPoint);
+            checkIfIntersects(line,lines);
             lines.add(line);
             actual = newPoint;
           }else{
             facing = 'S';
             Point newPoint =new Point(actual.getX(),actual.getY()-num);
             Line line = new Line(actual,newPoint);
+            checkIfIntersects(line,lines);
             lines.add(line);
             actual = newPoint;
           }
@@ -68,12 +73,14 @@ public class Day1 {
             facing = 'W';
             Point newPoint =new Point(actual.getX()-num,actual.getY());
             Line line = new Line(actual,newPoint);
+            checkIfIntersects(line,lines);
             lines.add(line);
             actual = newPoint;
           }else{
             facing ='E';
             Point newPoint =new Point(actual.getX()+num,actual.getY());
             Line line = new Line(actual,newPoint);
+            checkIfIntersects(line,lines);
             lines.add(line);
             actual = newPoint;
           }
@@ -83,11 +90,39 @@ public class Day1 {
     System.out.println("X: "+actual.getX()+"\nY: "+actual.getY()+"\nS: "+ (Math.abs(actual.getX())+Math.abs(actual.getY())));
   }
 
-  private static void checkIfCuts(Line newLine,List<Line> lines) {
+  private static void checkIfIntersects(Line newLine,List<Line> lines) {
     for(Line line : lines){
-      
+      if(isVertical(newLine)){
+        if(!isVertical(line)){
+          if(Math.min(newLine.getIni().getY(),newLine.getFin().getY())<line.getFin().getY()){
+            if(Math.max(newLine.getIni().getY(),newLine.getFin().getY())>line.getFin().getY()){
+              if(Math.min(line.getIni().getX(),line.getFin().getX())<newLine.getFin().getX()){
+                if(Math.max(line.getIni().getX(),line.getFin().getX()) >newLine.getFin().getX()){
+                  System.out.println("Intersects in ("+newLine.getIni().getX()+","+line.getFin().getY()+") -> "+(Math.abs(newLine.getIni().getX())+Math.abs(line.getFin().getY())));
+                }
+              }
+              
+            }
+          }
+        }
+      }else{
+        if(isVertical(line)){
+          if(Math.min(line.getIni().getY(),line.getFin().getY())<newLine.getFin().getY()){
+            if(Math.max(line.getIni().getY(),line.getFin().getY())>newLine.getFin().getY()){
+              if(Math.min(newLine.getIni().getX(),newLine.getFin().getX())<line.getFin().getX()){
+                if(Math.max(newLine.getIni().getX(),newLine.getFin().getX()) >line.getFin().getX()){
+                  System.out.println("Intersects in ("+line.getIni().getX()+","+newLine.getFin().getY()+") -> "+(Math.abs(line.getIni().getX())+Math.abs(newLine.getFin().getY())));
+                }
+              }
+
+            }
+          }
+        }
+      }
     }
   }
+
+ 
 
   private static boolean isVertical(Line line) {
     return line.getIni().getX() == line.getFin().getX();
