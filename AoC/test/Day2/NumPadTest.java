@@ -10,33 +10,33 @@ public class NumPadTest {
   @Test
   public void shouldCreateNumPad(){
     NumPad numPad = new NumPad(0,0);
-    assertThat(numPad.getNum(),is(7));
+    assertThat(numPad.getChar(),is('7'));
   }
 
   @Test
   public void shouldMoveCorrectlyInBounds(){
     NumPad numPad = new NumPad(1,1);
-    numPad.goUp();
-    assertThat(numPad.getNum(),is(2));
-    numPad.goRight();
-    assertThat(numPad.getNum(),is(3));
-    numPad.goRight();
-    numPad.goRight();
-    numPad.goRight();
-    assertThat(numPad.getNum(),is(3));
-    numPad.goUp();
-    numPad.goUp();
-    assertThat(numPad.getNum(),is(3));
-    numPad.goLeft();
-    numPad.goLeft();
-    numPad.goLeft();
-    numPad.goLeft();
-    assertThat(numPad.getNum(),is(1));
-    numPad.goDown();
-    numPad.goDown();
-    numPad.goDown();
-    numPad.goDown();
-    assertThat(numPad.getNum(),is(7));
+    numPad.moveUp();
+    assertThat(numPad.getChar(),is('2'));
+    numPad.moveRight();
+    assertThat(numPad.getChar(),is('3'));
+    numPad.moveRight();
+    numPad.moveRight();
+    numPad.moveRight();
+    assertThat(numPad.getChar(),is('3'));
+    numPad.moveUp();
+    numPad.moveUp();
+    assertThat(numPad.getChar(),is('3'));
+    numPad.moveLeft();
+    numPad.moveLeft();
+    numPad.moveLeft();
+    numPad.moveLeft();
+    assertThat(numPad.getChar(),is('1'));
+    numPad.moveDown();
+    numPad.moveDown();
+    numPad.moveDown();
+    numPad.moveDown();
+    assertThat(numPad.getChar(),is('7'));
   }
 
 }

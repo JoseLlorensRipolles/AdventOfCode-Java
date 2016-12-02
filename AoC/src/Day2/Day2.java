@@ -8,7 +8,11 @@ public class Day2 {
   public static void main(String[] args){
     Scanner in  = new Scanner(System.in);
     List<String> instructions = new ArrayList<String>();
-    NumPad numPad = new NumPad(1,1);
+
+    //If you want solve part 2 comment next line and uncomment the "NumPadAdv numPad = new NumPadAdv(2,2)"
+
+     NumPad numPad = new NumPad(1, 1);
+    //NumPadAdv numPad = new NumPadAdv(2,2);
 
     for(int i = 0; i<5 ; i++){
       instructions.add(in.nextLine());
@@ -20,21 +24,21 @@ public class Day2 {
       for(int i = 0; i< instruction.length;i++){
         switch (instruction[i]){
           case ('R'):
-            numPad.goRight();
+            numPad.moveRight();
             break;
           case ('L'):
-            numPad.goLeft();
+            numPad.moveLeft();
             break;
           case ('D'):
-            numPad.goDown();
+            numPad.moveDown();
             break;
           case ('U'):
-            numPad.goUp();
+            numPad.moveUp();
             break;
         }
       }
 
-      System.out.print(numPad.getNum());
+      System.out.print(numPad.getChar());
     }
 
 

@@ -1,7 +1,7 @@
 package Day2;
 
 public class NumPad {
-  int[][] numPad = new int[][]{{7,8,9},{4,5,6},{1,2,3}};
+  char[][] numPad = new char[][]{{'7','8','9'},{'4','5','6'},{'1','2','3'}};
   int i, j;
 
   public NumPad( int i, int j) {
@@ -9,23 +9,23 @@ public class NumPad {
     this.j = j;
   }
 
-  public void goUp(){
+  public void moveUp(){
     if(i<2) {i++;}
   }
 
-  public void goDown(){
+  public void moveDown(){
     if(i>0) {i--;}
   }
 
-  public void goRight() {
+  public void moveRight() {
     if(j<2) {j++;}
   }
 
-  public void goLeft(){
+  public void moveLeft(){
     if(j>0) {j--;}
   }
 
-  public int getNum(){
+  public char getChar(){
     return numPad[i][j];
   }
 }
