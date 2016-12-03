@@ -9,4 +9,8 @@ public class Triangle {
     this.b = b;
     this.c = c;
   }
+
+  public boolean isPossible(){
+    return (a+b>c && a+c>b && b+c>a);
+  }
 }
