@@ -13,4 +13,22 @@ public class Triangle {
   public boolean isPossible(){
     return (a+b>c && a+c>b && b+c>a);
   }
+
+  public boolean equals(Triangle other){
+    return  this.a == other.getA() &&
+            this.b == other.getB() &&
+            this.c == other.getC();
+  }
+
+  public int getA() {
+    return a;
+  }
+
+  public int getB() {
+    return b;
+  }
+
+  public int getC() {
+    return c;
+  }
 }
