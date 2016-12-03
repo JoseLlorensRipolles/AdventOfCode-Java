@@ -33,9 +33,9 @@ public class TriangleParser {
     Queue<Integer> queue1,queue2, queue3;
     Queue<Integer> all;
 
-    queue1 = new LinkedBlockingQueue<>();
-    queue2 = new LinkedBlockingQueue<>();
-    queue3 = new LinkedBlockingQueue<>();
+    queue1 = new LinkedBlockingQueue<>(2000);
+    queue2 = new LinkedBlockingQueue<>(2000);
+    queue3 = new LinkedBlockingQueue<>(2000);
     all = new LinkedBlockingQueue();
 
     while(!lines.isEmpty()){

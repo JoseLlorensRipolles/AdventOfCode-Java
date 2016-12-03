@@ -12,7 +12,9 @@ public class Day3Part2 {
     TriangleParser parser = new TriangleParser();
     int count =0 ;
     Queue<String> lines = new LinkedBlockingQueue<>();
-    while (in.hasNext(".{2,}")) {
+
+    System.out.println("Insert your input here: (After pasting it press enter, any letter and enter again)");
+    while (in.hasNext("\\d+")) {
       lines.add(in.nextLine());
     }
 
