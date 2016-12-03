@@ -2,10 +2,8 @@ package Day3;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Queue;
-import java.util.Stack;
 import java.util.concurrent.LinkedBlockingQueue;
 
 import static org.hamcrest.core.Is.is;
