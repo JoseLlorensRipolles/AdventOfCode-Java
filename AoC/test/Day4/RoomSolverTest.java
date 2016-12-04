@@ -51,6 +51,14 @@ public class RoomSolverTest {
   @Test
   public void should_solve_part1(){
     RoomSolver roomSolver = new RoomSolver();
-    assertThat(roomSolver.solve("input.txt"),is(1514));
+    assertThat(roomSolver.solvePart1(),is(245102));
+  }
+
+  @Test
+  public void should_shift_by_id(){
+    RoomSolver roomSolver = new RoomSolver();
+    assertThat(roomSolver.shiftRoom("aaa-bbb",2),is("ccc ddd"));
+    assertThat(roomSolver.shiftRoom("zzz-aaa",2),is("bbb ccc"));
+    assertThat(roomSolver.shiftRoom("qzmt-zixmtkozy-ivhz",343),is("very encrypted name"));
   }
 }

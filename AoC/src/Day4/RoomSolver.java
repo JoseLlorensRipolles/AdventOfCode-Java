@@ -1,5 +1,6 @@
 package Day4;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -66,11 +67,12 @@ public class RoomSolver {
     return true;
   }
 
-  public int solve(String s) {
+  public int solvePart1() {
     int count = 0 ;
     String[] lines = null;
     try {
       String input = new String(Files.readAllBytes(Paths.get("/home/josellorens/Code/JavaCode/AoC/src/Day4/input.txt")));
+      //String input = new String(Files.readAllBytes(new File("input.txt").get));
       lines = input.split("\n");
     } catch (Exception e) {
       System.err.println(e);
@@ -93,5 +95,20 @@ public class RoomSolver {
 
     matcher.find();
     return Integer.parseInt(matcher.group(2));
+  }
+
+  public String shiftRoom(String s, int id){
+    char[] roomChars = s.toCharArray();
+    for(int i = 0 ; i< roomChars.length; i++){
+      if(roomChars[i] != '-'){
+        char letter = roomChars[i];
+        letter -= 97;
+        letter +=id;
+        letter = (char)(letter % 26);
+        letter += 97;
+        roomChars[i] = letter;
+      }
+    }
+    return new String(roomChars).replaceAll("-"," ");
   }
 }
