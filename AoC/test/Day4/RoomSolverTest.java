@@ -61,4 +61,10 @@ public class RoomSolverTest {
     assertThat(roomSolver.shiftRoom("zzz-aaa",2),is("bbb ccc"));
     assertThat(roomSolver.shiftRoom("qzmt-zixmtkozy-ivhz",343),is("very encrypted name"));
   }
+
+  @Test
+  public void should_solve_part2(){
+    RoomSolver roomSolver = new RoomSolver();
+    assertThat(roomSolver.solvePart2(),is(324));
+  }
 }

@@ -111,4 +111,33 @@ public class RoomSolver {
     }
     return new String(roomChars).replaceAll("-"," ");
   }
+
+  public int solvePart2(){
+    String[] lines = null;
+    try {
+      String input = new String(Files.readAllBytes(Paths.get("/home/josellorens/Code/JavaCode/AoC/src/Day4/input.txt")));
+      //String input = new String(Files.readAllBytes(new File("input.txt").get));
+      lines = input.split("\n");
+    } catch (Exception e) {
+      System.err.println(e);
+      System.exit(26);
+    }
+
+    String regex = "(.*)-(\\d*).(\\D*).$";
+    Pattern pattern = Pattern.compile(regex);
+
+    for(String line :lines) {
+      Matcher matcher = pattern.matcher(line);
+
+      matcher.find();
+      String roomName = matcher.group(1);
+      Integer id = Integer.parseInt(matcher.group(2));
+
+      String roomDeEncrypted = shiftRoom(roomName,id);
+      if(roomDeEncrypted.contains("northpole object storage")){
+        return id;
+      }
+    }
+    return -1;
+  }
 }
