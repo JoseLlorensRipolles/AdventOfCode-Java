@@ -1,4 +1,4 @@
-package Day2;
+package day2;
 
 public class NumPadAdv {
   char[][] numPad = new char[][]{{'-','-','D','-','-'}

@@ -1,6 +1,5 @@
-package Day4;
+package day4;
 
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.HashMap;
@@ -57,7 +56,7 @@ public class RoomSolver {
     int count = 0 ;
     String[] lines = null;
     try {
-      lines = new String(Files.readAllBytes(Paths.get("src/Day4/resources/input.txt"))).split("\n");
+      lines = new String(Files.readAllBytes(Paths.get("src/day4/resources/input.txt"))).split("\n");
     } catch (Exception e) {
       System.err.println(e);
       System.exit(26);
@@ -99,8 +98,7 @@ public class RoomSolver {
   public int solvePart2(){
     String[] lines = null;
     try {
-      String input = new String(Files.readAllBytes(Paths.get("src/Day4/resources/input.txt")));
-      //String input = new String(Files.readAllBytes(new File("input.txt").get));
+      String input = new String(Files.readAllBytes(Paths.get("src/day4/resources/input.txt")));
       lines = input.split("\n");
     } catch (Exception e) {
       System.err.println(e);
