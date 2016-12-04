@@ -14,19 +14,6 @@ public class RoomSolver {
   public RoomSolver() {
   }
 
-  public int getSumIdReals() {
-    String input = null;
-
-    try {
-      input = new String(Files.readAllBytes(Paths.get("input.txt")));
-    } catch (IOException e) {
-      System.err.println(e);
-    }
-
-    System.out.println(input);
-    return 0;
-  }
-
   public Boolean isReal(String s) {
 
     String regex = "(.*)-\\d*.(\\D*).$";
