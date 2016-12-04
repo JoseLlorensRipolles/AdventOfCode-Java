@@ -72,12 +72,12 @@ public class RoomSolver {
   }
 
   public int extractId(String line) {
-    String regex = "(.*)-(\\d*).(\\D*).$";
+    String regex = ".*-(\\d*).*$";
     Pattern pattern = Pattern.compile(regex);
     Matcher matcher = pattern.matcher(line);
 
     matcher.find();
-    return Integer.parseInt(matcher.group(2));
+    return Integer.parseInt(matcher.group(1));
   }
 
   public String shiftRoom(String s, int id){
@@ -105,7 +105,7 @@ public class RoomSolver {
       System.exit(26);
     }
 
-    String regex = "(.*)-(\\d*).(\\D*).$";
+    String regex = "(.*)-(\\d*).*$";
     Pattern pattern = Pattern.compile(regex);
 
     for(String line :lines) {
