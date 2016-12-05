@@ -38,6 +38,10 @@ public class MD5Solver {
     }
   }
 
+  public boolean checkIfInBounds(char c) {
+    return c-48 < 8;
+  }
+
   public String solvePart1(String id) {
     int count = 0, letters = 0;
     char[] solution = new char[8];
@@ -61,9 +65,6 @@ public class MD5Solver {
     char[] solution = new char[8];
     boolean[] finded = new boolean[8];
 
-    for(int i = 0 ; i< finded.length; i++){
-      finded[i]=false;
-    }
 
     while (letters < 8) {
       String aux = id + count;
@@ -84,8 +85,5 @@ public class MD5Solver {
     return new String(solution);
   }
 
-  public boolean checkIfInBounds(char c) {
-    return c-48 < 8;
-  }
 }
 
