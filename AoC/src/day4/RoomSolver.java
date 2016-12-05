@@ -72,7 +72,7 @@ public class RoomSolver {
   }
 
   public int extractId(String line) {
-    String regex = ".*-(\\d*).*$";
+    String regex = ".*-(\\d*)\\[.*$";
     Pattern pattern = Pattern.compile(regex);
     Matcher matcher = pattern.matcher(line);
 
