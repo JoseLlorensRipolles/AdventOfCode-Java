@@ -64,11 +64,11 @@ public class MD5Solver {
     int count = 0, letters = 0;
     char[] solution = new char[8];
     boolean[] finded = new boolean[8];
-
+    String aux,hash;
 
     while (letters < 8) {
-      String aux = id + count;
-      String hash = MD5Hash(aux);
+      aux = id + count;
+      hash = MD5Hash(aux);
       if (checkIfFiveZeroes(hash)) {
 
         if(checkIfInBounds(hash.charAt(5)) && !finded[hash.charAt(5)-48]){
