@@ -7,4 +7,4 @@
 - [X] [Day 3](https://github.com/JoseLlorensRipolles/AdventOfCode-Java/tree/master/AoC/src/Day3). Parsing data the hard way (Integers).
 - [X] [Day 4](https://github.com/JoseLlorensRipolles/AdventOfCode-Java/tree/master/AoC/src/Day4). Parsing rare room names (Strings).
 - [X] [Day 5](https://github.com/JoseLlorensRipolles/AdventOfCode-Java/tree/master/AoC/src/day5). Hashing with MD5.
-
+- [X] [Day 6](https://github.com/JoseLlorensRipolles/AdventOfCode-Java/tree/master/AoC/src/day6). De-corrupting data.
