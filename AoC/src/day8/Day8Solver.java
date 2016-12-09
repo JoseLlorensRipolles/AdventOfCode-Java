@@ -30,7 +30,7 @@ public class Day8Solver {
         }
       }
     }
-    screen.show();
+    System.out.println("Part 1 solution: "+screen.countLit());
     return screen;
   }
 
