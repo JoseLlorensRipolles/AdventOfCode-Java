@@ -1,6 +1,6 @@
-#Advent of code 2016!
+# Advent of code 2016!
 
-###Java solutions for this year puzzles of http://adventofcode.com/
+### Java solutions for this year puzzles of http://adventofcode.com/
 
 - [X] [Day 1](https://github.com/JoseLlorensRipolles/AdventOfCode-Java/tree/master/AoC/src/Day1).   Manhattan distances and intersections.
 - [X] [Day 2](https://github.com/JoseLlorensRipolles/AdventOfCode-Java/tree/master/AoC/src/Day2).   Moving in a matrix with bounds.
